@@ -10,13 +10,13 @@ const morgan = require('morgan');
 const app = express();
 
 // Settings
-const port = process.env.port || 3000;
+const port = process.env.port || 4000;
 app.set('views', path.join(__dirname, 'views'));
 app.engine('.hbs', exphbs({
-  defaultLayout: 'main',
-  layoutsDir: path.join(app.get('views'), 'layouts'),
-  partialsDir: path.join(app.get('views'), 'partials'),
-  extname: '.hbs'
+    defaultLayout: 'main',
+    layoutsDir: path.join(app.get('views'), 'layouts'),
+    partialsDir: path.join(app.get('views'), 'partials'),
+    extname: '.hbs'
 }));
 app.set('view engine', '.hbs');
 
@@ -27,10 +27,10 @@ app.use(morgan('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }))
 const storage = multer.diskStorage({
-  destination: path.join(__dirname, 'public/uploads'),
-  filename: (req, file, cb) => {
-    cb(null, new Date().getTime() + path.extname(file.originalname));
-  }
+    destination: path.join(__dirname, 'public/uploads'),
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + path.extname(file.originalname));
+    }
 });
 app.use(multer({ storage }).single('image'));
 
@@ -40,5 +40,5 @@ app.use('/', require('./routes/index.routes'));
 
 
 app.listen(port, () => {
-  console.log(`Server online on port ${port}`);
+    console.log(`Server online on port ${port}`);
 })

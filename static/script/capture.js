@@ -1,11 +1,10 @@
-
-(function () {
+(function() {
     // The width and height of the captured photo. We will set the
     // width to the value defined here, but the height will be
     // calculated based on the aspect ratio of the input stream.
 
-    var width = 320;    // We will scale the photo width to this
-    var height = 0;     // This will be computed based on the input stream
+    var width = 320; // We will scale the photo width to this
+    var height = 0; // This will be computed based on the input stream
 
     // |streaming| indicates whether or not we're currently streaming
     // video from the camera. Obviously, we start at false.
@@ -27,15 +26,15 @@
         startbutton = document.getElementById('startbutton');
 
         navigator.mediaDevices.getUserMedia({ video: true, audio: false })
-            .then(function (stream) {
+            .then(function(stream) {
                 video.srcObject = stream;
                 video.play();
             })
-            .catch(function (err) {
+            .catch(function(err) {
                 console.log("An error occurred: " + err);
             });
 
-        video.addEventListener('canplay', function (ev) {
+        video.addEventListener('canplay', function(ev) {
             if (!streaming) {
                 height = video.videoHeight / (video.videoWidth / width);
 
@@ -54,7 +53,7 @@
             }
         }, false);
 
-        startbutton.addEventListener('click', function (ev) {
+        startbutton.addEventListener('click', function(ev) {
             takepicture();
             ev.preventDefault();
         }, false);

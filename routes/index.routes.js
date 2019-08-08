@@ -13,7 +13,12 @@ router.get('/', (req, res) => {
     res.render('face_detection');
 });
 
-router.post('/add', async (req, res) => {
+router.get('/sample', (req, res) => {
+    res.render('image_form');
+});
+
+
+router.post('/add', async(req, res) => {
 
     console.log("Imagen ", req.file);
     // const result = await cloudinary.v2.uploader.upload(req.file.path);
@@ -30,7 +35,7 @@ router.post('/add', async (req, res) => {
         url: url,
     };
 
-    visualRecognition.classify(params, function (err, response) {
+    visualRecognition.classify(params, function(err, response) {
         if (err) {
             console.log(err);
         } else {

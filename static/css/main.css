@@ -1,23 +1,42 @@
-#video {
-    border: 1px solid black;
-    box-shadow: 2px 2px 3px black;
-    width: 440px;
-    height: 331px;
+.contenedor {
+    margin-top: 100px;
 }
 
-/*
-#photo {
+.bg-dark {
+    background-color: #013676!important;
+}
+
+canvas {
+    position: absolute;
+    top: 147px;
+    left: 128px;
+}
+
+h3 {
+    color: #013676;
+    padding-bottom: 10px;
+}
+
+.chat {
+    margin-top: 20px;
+}
+
+
+/* #video {
+    display: none;
+} */
+
+
+/* #photo {
     border: 1px solid black;
     box-shadow: 2px 2px 3px black;
     width: 320px;
     height: 240px;
 }
+ */
 
-#canvas {
-    display: none;
-}
 
-.camera {
+/* .camera {
     width: 340px;
     display: inline-block;
 }
@@ -40,20 +59,3 @@
     font-family: "Lucida Grande", "Arial", sans-serif;
     color: rgba(255, 255, 255, 1.0);
 } */
-
-body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-canvas {
-    position: absolute;
-    left: 128px;
-    top: 179px;
-}
