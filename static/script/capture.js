@@ -20,8 +20,8 @@
     var startbutton = null;
 
     function startup() {
-        video = document.getElementById('video');
-        canvas = document.getElementById('canvas');
+        video = document.getElementById('videos');
+        canvas = document.getElementById('canvass');
         photo = document.getElementById('photo');
         startbutton = document.getElementById('startbutton');
 
